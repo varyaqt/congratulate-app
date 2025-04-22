@@ -1,0 +1,14 @@
+.content {
+  min-height: 100vh;
+  max-height: 100vh;
+  display: grid;
+  grid-template-rows: auto 1fr;
+  row-gap: 20px;
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    row-gap: 15px;
+    justify-content: center;
+  }
+}

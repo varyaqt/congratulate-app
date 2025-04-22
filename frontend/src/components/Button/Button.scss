@@ -1,0 +1,58 @@
+.button {
+  @include flex-center;
+  background: var(--color-pink);
+  border: var(--border);
+  padding: fluid(40, 16);
+  position: relative;
+  overflow: hidden;
+  width: 60%;
+  height: 100%;
+
+  // Размер выреза (можно регулировать)
+  $cut-size: 15px; // Уменьшите это значение, если нужно меньше вырезать
+
+  // Маска с маленькими вырезами в углах
+  -webkit-mask: radial-gradient(circle at 0 0, transparent $cut-size, black 0)
+      top left,
+    radial-gradient(circle at 100% 0, transparent $cut-size, black 0) top right,
+    radial-gradient(circle at 100% 100%, transparent $cut-size, black 0) bottom
+      right,
+    radial-gradient(circle at 0 100%, transparent $cut-size, black 0) bottom
+      left;
+  -webkit-mask-size: 51% 51%;
+  -webkit-mask-repeat: no-repeat;
+  mask: radial-gradient(circle at 0 0, transparent $cut-size, black 0) top left,
+    radial-gradient(circle at 100% 0, transparent $cut-size, black 0) top right,
+    radial-gradient(circle at 100% 100%, transparent $cut-size, black 0) bottom
+      right,
+    radial-gradient(circle at 0 100%, transparent $cut-size, black 0) bottom
+      left;
+  mask-size: 51% 51%;
+  mask-repeat: no-repeat;
+
+  &__inner {
+    color: inherit;
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    text-align: center;
+
+    @include hover {
+      &::after {
+        width: 70%;
+      }
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      translate: -50%;
+      width: 0;
+      height: 2px;
+      background-color: currentColor;
+      transition-duration: var(--transition-duration);
+    }
+  }
+}
