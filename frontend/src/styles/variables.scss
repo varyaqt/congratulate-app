@@ -1,0 +1,27 @@
+@use "helpers" as *;
+
+:root {
+  --color-yellow: #fbd680;
+  --color-pink: #fbaf87;
+  --color-red: #a0214c;
+
+  --font-family-base: "Gabriela", sans-serif;
+  --font-family-accent: "Great Vibes", sans-serif;
+
+  --transition-duration: 0.2s;
+
+  --border: 3px solid var(--color-red);
+
+  --container-width: 1600px;
+  --container-padding-x: 16px;
+  --container-padding-y: 16px;
+
+  --transition-duration: 0.2s;
+
+  --container-width: #{fluid-to-laptop(
+      $container-desktop-width,
+      $container-laptop-width
+    )};
+
+  --container-padding-x: 16px;
+}

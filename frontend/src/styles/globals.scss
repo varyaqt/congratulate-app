@@ -1,0 +1,58 @@
+body {
+  @include fluid-text(40, 16);
+  display: flex;
+  flex-direction: column;
+  font-family: var(--font-family-base);
+  color: var(--color-red);
+  background-color: var(--color-yellow);
+}
+
+main {
+  flex-grow: 1;
+}
+
+h1,
+.h1 {
+  @include fluid-text(120, 50);
+  font-family: var(--font-family-accent);
+}
+
+.h2 {
+  @include fluid-text(50, 20);
+}
+
+a,
+button,
+label,
+input,
+textarea,
+select,
+svg * {
+  transition-duration: var(--transition-duration);
+}
+
+a {
+  color: inherit;
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  text-align: center;
+
+  @include hover {
+    &::after {
+      width: 70%;
+    }
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    translate: -50%;
+    width: 0;
+    height: 2px;
+    background-color: currentColor;
+    transition-duration: inherit;
+  }
+}
