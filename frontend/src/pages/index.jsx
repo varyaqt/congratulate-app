@@ -2,6 +2,7 @@ import "@/styles"
 
 import Header from "@/layouts/Header"
 import Content from "@/layouts/Content"
+import Menu from "@/components/Menu"
 
 export const metadata = {
   title: "Главная",
@@ -11,7 +12,7 @@ export default function () {
   return (
     <>
       <Header />
-      <Content></Content>
+      <Menu />
     </>
   )
 }

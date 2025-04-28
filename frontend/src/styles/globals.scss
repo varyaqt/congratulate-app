@@ -1,10 +1,52 @@
 body {
   @include fluid-text(40, 16);
+
+  position: relative;
+  overflow-x: hidden;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
   font-family: var(--font-family-base);
   color: var(--color-red);
   background-color: var(--color-yellow);
+
+  &::before {
+    position: fixed; // Фиксируем относительно viewport
+    content: "";
+    background: url("../assets/images/decoration_top.svg") center/contain
+      no-repeat;
+    width: min(35vw, 350px);
+    height: min(70vh, 700px);
+    z-index: -1;
+    top: 0;
+    left: 0;
+    margin-left: -10%;
+
+    @include tablet {
+      display: none;
+    }
+  }
+
+  &::after {
+    position: fixed; // Фиксируем относительно viewport
+    content: "";
+    background: url("../assets/images/decoration_down.svg") center/contain
+      no-repeat;
+    width: min(35vw, 350px);
+    height: min(70vh, 700px);
+    z-index: -1;
+    bottom: 0;
+    right: 0;
+    margin-right: -10%;
+
+    @include tablet {
+      margin-bottom: -10%;
+    }
+
+    @include mobile {
+      margin-bottom: -25%;
+    }
+  }
 }
 
 main {
@@ -40,7 +82,7 @@ a {
 
   @include hover {
     &::after {
-      width: 70%;
+      width: 100%;
     }
   }
 
