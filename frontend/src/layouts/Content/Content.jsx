@@ -2,7 +2,7 @@ import Button from "@/components/Button"
 import "./Content.scss"
 
 const Content = () => {
-  const sectionsSet = ["Категории", "Поиск по ключевым словам", "Избранное"]
+  const sectionsSet = ["поздравления"]
   return (
     <main className="content">
       <div className="content__inner">
