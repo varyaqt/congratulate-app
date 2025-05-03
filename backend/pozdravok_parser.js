@@ -54,7 +54,7 @@ async function parseCongratulations(category, subcategory, baseUrl, maxPages = 3
             });
 
             if (blocks.length === 0) {
-                console.log("⚠️ Нет подходящих поздравлений на странице");
+                console.log("Нет подходящих поздравлений на странице");
                 break;
             }
 
