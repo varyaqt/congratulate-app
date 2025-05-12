@@ -2,10 +2,10 @@ import classNames from "classnames"
 import "./Button.scss"
 
 const Button = (props) => {
-  const { classname, label } = props
+  const { classname, label, href } = props
 
   return (
-    <a href="" className={classNames(classname, "button")}>
+    <a href={href} className={classNames(classname, "button")}>
       <span className="button__inner">{label}</span>
     </a>
   )
