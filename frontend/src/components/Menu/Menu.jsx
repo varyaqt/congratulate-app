@@ -9,8 +9,8 @@ const Menu = () => {
     { label: "Свадьба", href: "/wedding" },
   ]
   return (
-    <main className="menu container">
-      <div className="menu__inner">
+    <main className="menu ">
+      <div className="menu__inner container">
         <ul className="menu__list">
           {menuItems.map(({ label, href }, index) => (
             <li className="menu__item" key={index}>
